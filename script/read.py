@@ -12,8 +12,10 @@ lst = []
 for i in range(5):
     lst.append(data_final[i+1])
 
-transposed_doc = np.array(lst).T
-print(transposed_doc)
-print ("______________")
-print(lst)
+#transposed_doc = np.array(lst).T
+
+
+#print(transposed_doc)
+#print ("______________")
+#print(lst)
 
