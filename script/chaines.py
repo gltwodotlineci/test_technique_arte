@@ -15,11 +15,16 @@ class Chaine:
 print("________________")
 
 x = np.array(data_final)
-length_list = len(x)
-
 transposed_dt = []
-for i in range(1,length_list,14):
-    down_part_block = i
-    up_part_block = i + 14
-    transposed_dt.append(x[down_part_block:up_part_block, 2:].T)
+
+def transpos_fc(first_row, step, data):
+    length_list = len(data) - step
+    for i in range(first_row,length_list,step):
+        down_part_block = i
+        up_part_block = i + 14
+        transposed_dt.append(data[down_part_block:up_part_block, 2:].T)
+    return np.array(transposed_dt)
+
+z = transpos_fc(1,14,x)
+print(z)
 
