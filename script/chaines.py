@@ -16,6 +16,8 @@ class Test_cls:
         self.step = step
         self.data = data
         self.transposed_dt = []
+        self.fix_list = []
+        self.final_list = []
 
     def transpos_fc(self):
         length_list = len(self.data) - self.step
@@ -25,12 +27,11 @@ class Test_cls:
             self.transposed_dt.append(self.data[down_part_block:up_part_block, 2:].T)
         return np.array(self.transposed_dt)
 
-print(Test_cls(14,np.array(data_final)).transpos_fc())
+    def fixing_dt(self):
+        for i in self.transpos_fc():
+            for j in range(len(i)):
+                self.fix_list.append(i[j])
+        return np.array(self.fix_list)
 
-
-#z = transpos_fc(1,14,np.array(data_final))
-#print(z[0:6])
-
-
-
+print(Test_cls(14,np.array(data_final)).fixing_dt())
 
