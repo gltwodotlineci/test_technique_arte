@@ -11,12 +11,11 @@ class Chaine:
         self.canal_plus = canal_plus
         self.arte = arte
 
-
 class Test_cls:
     def __init__(self,step,data):
-        self.transposed_dt = []
         self.step = step
         self.data = data
+        self.transposed_dt = []
 
     def transpos_fc(self):
         length_list = len(self.data) - self.step
@@ -26,7 +25,7 @@ class Test_cls:
             self.transposed_dt.append(self.data[down_part_block:up_part_block, 2:].T)
         return np.array(self.transposed_dt)
 
-print(Test_cls(14,data_final).transposed_dt())
+print(Test_cls(14,np.array(data_final)).transpos_fc())
 
 
 #z = transpos_fc(1,14,np.array(data_final))
