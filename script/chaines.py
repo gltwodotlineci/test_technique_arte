@@ -12,19 +12,26 @@ class Chaine:
         self.arte = arte
 
 
-print("________________")
+class Test_cls:
+    def __init__(self,step,data):
+        self.transposed_dt = []
+        self.step = step
+        self.data = data
 
-x = np.array(data_final)
-transposed_dt = []
+    def transpos_fc(self):
+        length_list = len(self.data) - self.step
+        for i in range(1,length_list,self.step):
+            down_part_block = i
+            up_part_block = i + 14
+            self.transposed_dt.append(self.data[down_part_block:up_part_block, 2:].T)
+        return np.array(self.transposed_dt)
 
-def transpos_fc(first_row, step, data):
-    length_list = len(data) - step
-    for i in range(first_row,length_list,step):
-        down_part_block = i
-        up_part_block = i + 14
-        transposed_dt.append(data[down_part_block:up_part_block, 2:].T)
-    return np.array(transposed_dt)
+print(Test_cls(14,data_final).transposed_dt())
 
-z = transpos_fc(1,14,x)
-print(z)
+
+#z = transpos_fc(1,14,np.array(data_final))
+#print(z[0:6])
+
+
+
 
