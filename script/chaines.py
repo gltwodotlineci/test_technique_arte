@@ -1,5 +1,6 @@
 import read
 from read import data_final
+from choos_columns_rows import CreateColumnsRows
 import numpy as np
 
 
@@ -10,6 +11,7 @@ class Chaine:
         self.france_3 = france_3
         self.canal_plus = canal_plus
         self.arte = arte
+
 
 class Test_cls:
     def __init__(self,step,data):
@@ -33,5 +35,11 @@ class Test_cls:
                 self.fix_list.append(i[j])
         return np.array(self.fix_list)
 
-print(Test_cls(14,np.array(data_final)).fixing_dt())
+
+
+#print(Test_cls(14,np.array(data_final)).fixing_dt())
+
+print(CreateColumnsRows().creating_cl(0,2,7,np.array(data_final)))
+
+print(CreateColumnsRows().creating_rw(1,1,15,np.array(data_final)))
 
