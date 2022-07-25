@@ -1,8 +1,7 @@
 
+class CreateColumsRows:
+    def select_column_from_row(self,first_col_of_row, dt):
+        return dt[0,first_col_of_row:]
 
-class CreateColumnsRows:
-    def creating_cl(self,row_nb,first_col, last_col,dt):
-        return dt[row_nb,first_col:last_col]
-
-    def creating_rw(self,col_nb,first_row,last_row,dt):
-        return (dt[first_row:last_row,col_nb])
+    def select_row_from_col(self,col_nb,last_row_of_cl,dt):
+        return (dt[1:last_row_of_cl,col_nb])
